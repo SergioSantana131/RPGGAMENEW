@@ -4,8 +4,6 @@
 #include "Enemy/Enemy.h"
 #include "Player/Player.h"
 
-
-
 using namespace std;
 
 void attack(Character& attacker, Character& target) {
@@ -29,10 +27,10 @@ int main() {
     Character player = Character("Jonh Wick", 100, 10, 5, 20);
     Character enemy = Character("ChapoGuzman", 100, 8, 4, 15);
 
-    // Semilla para generación de números aleatorios
+
     srand(time(nullptr));
 
-    // Mostrar el estado inicial de los personajes
+
     cout << "Initial Status:" << endl;
     cout << player.getName() << " - Health: " << player.getHealth() << endl;
     cout << enemy.getName() << " - Health: " << enemy.getHealth() << endl;
@@ -40,19 +38,29 @@ int main() {
 
     // Bucle hasta que uno de los personajes muera
     while (player.getHealth() > 0 && enemy.getHealth() > 0) {
+        char choice;
+        cout << "Choose your player (E for Enemy, P for Player): ";
+        cin >> choice;
+
         // Turno del jugador
-        attack(player, enemy);
+        if (choice == 'E' || choice == 'e')
+            attack(player, enemy);
+        else if (choice == 'P' || choice == 'p')
+            attack(enemy, player);
+        else {
+            cout << "Invalid choice! Please choose again." << endl;
+            continue;
+        }
+
         // Verificar si el enemigo ha muerto
         if (enemy.getHealth() <= 0) {
             cout << enemy.getName() << " has been defeated!" << endl;
             break;
         }
 
-        // Turno del enemigo
-        attack(enemy, player);
-        // Verificar si el jugador ha muerto
         cout << "Remaining Health - " << player.getName() << ": " << player.getHealth() << ", " << enemy.getName() << ": " << enemy.getHealth() << endl;
 
+        // Verificar si el jugador ha muerto
         if (player.getHealth() <= 0) {
             cout << player.getName() << " has been defeated!" << endl;
             break;

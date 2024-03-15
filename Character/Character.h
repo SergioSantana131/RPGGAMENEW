@@ -6,30 +6,33 @@
 #define RPGGAMENEW_CHARACTER_H
 #include<string>
 
-using namespace std;
+
+#ifndef CHARACTER_H
+#define CHARACTER_H
+
+#include <string>
 
 class Character {
-protected:
-    string name;
+private:
+    std::string name;
     int health;
     int attack;
     int defense;
-    int speed;
+    int agility;
 
 public:
-    Character(string, int, int, int, int);
-    void setName(string);
-    string getName();
-    void setHealth(int);
-    int getHealth();
-    void setAttack(int);
-    int getAttack();
-    void setDefense(int);
-    int getDefense();
-    void setSpeed(int);
-    int getSpeed();
-    string toString();
+    Character(std::string name, int health, int attack, int defense, int agility);
+
+    std::string getName() const;
+    int getHealth() const;
+    int getAttack() const;
+    int getDefense() const;
+    int getAgility() const;
+
+    void setHealth(int health);
 };
+
+#endif // CHARACTER_H
 
 
 
