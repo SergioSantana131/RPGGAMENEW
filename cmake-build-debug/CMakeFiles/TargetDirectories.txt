@@ -1,0 +1,3 @@
+C:/Users/sheko/Documents/Programacion/Ceti/POO/RPGGAMENEW/cmake-build-debug/CMakeFiles/RPGGAMENEW.dir
+C:/Users/sheko/Documents/Programacion/Ceti/POO/RPGGAMENEW/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/sheko/Documents/Programacion/Ceti/POO/RPGGAMENEW/cmake-build-debug/CMakeFiles/rebuild_cache.dir
